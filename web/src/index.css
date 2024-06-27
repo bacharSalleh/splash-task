@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+@layer utilities {
+  
+  input[type="number"].hide-arrows::-webkit-outer-spin-button,
+  input[type="number"].hide-arrows::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .range {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    outline: none;
+  }
+
+  .range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      #ff7f50 0%,
+      #ff0000 calc(var(--value) * 1%),
+      white calc(var(--value) * 1%),
+      white 100%
+    );
+    border-radius: 5px;
+  }
+
+  .range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 25%;
+    background: linear-gradient(
+      to right,
+      #ff7f50,
+      #ff6347,
+      #ff4500,
+      #ff0000,
+      #ff1493
+    );
+    padding: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-top: -7px;
+  }
+
+  .animate-grow {
+    animation: grow 1s ease forwards;
+  }
+
+  @keyframes grow {
+    0% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
+    }
+  }
+}
